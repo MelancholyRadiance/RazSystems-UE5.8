@@ -34,6 +34,11 @@
 		{
 			"Name": "MagazineSystem",
 			"Enabled": true
+		},
+		{
+			"Name": "FireModeSystem",
+			"Enabled": true,
+			"Optional": true
 		}
 	]
 }
