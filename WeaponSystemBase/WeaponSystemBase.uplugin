@@ -1,0 +1,39 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "WeaponSystemBase",
+	"Description": "The base for an advanced weapon system meant to abstract hard decisions into workable trees",
+	"Category": "Raz",
+	"CreatedBy": "Raz",
+	"CreatedByURL": "https://github.com/MelancholyRadiance",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "WeaponSystemBase",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "WeaponSystemBaseEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "AmmoSystem",
+			"Enabled": true
+		},
+		{
+			"Name": "MagazineSystem",
+			"Enabled": true
+		}
+	]
+}

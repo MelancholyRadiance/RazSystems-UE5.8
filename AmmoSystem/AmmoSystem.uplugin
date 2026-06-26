@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "AmmoSystem",
+	"Description": "Ammunition system for use with MagazineSystem to allow custom easily made ammo",
+	"Category": "Raz",
+	"CreatedBy": "Raz",
+	"CreatedByURL": "https://github.com/MelancholyRadiance",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "AmmoSystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "AmmoSystemEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

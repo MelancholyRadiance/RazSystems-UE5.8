@@ -1,0 +1,50 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "RazPluginNamingConvention",
+	"Description": "Stops malformed names from slipping through the cracks when making hundreds of data assets",
+	"Category": "Raz",
+	"CreatedBy": "Raz",
+	"CreatedByURL": "https://github.com/MelancholyRadiance",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "RazPluginNamingConvention",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "DataValidation",
+			"Enabled": true
+		},
+		{
+			"Name": "AmmoSystem",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "MagazineSystem",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "WeaponSystemBase",
+			"Enabled": true,
+			"Optional": true
+		},
+		{
+			"Name": "WeaponSystemAttachments",
+			"Enabled": true,
+			"Optional": true
+		}
+	]
+}

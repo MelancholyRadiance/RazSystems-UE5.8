@@ -1,0 +1,15 @@
+# Compiled output
+Binaries/
+Intermediate/
+
+# Editor/IDE
+.vs/
+*.suo
+*.user
+
+# Claude
+.claude
+
+# UE derived data
+DerivedDataCache/
+Saved/
