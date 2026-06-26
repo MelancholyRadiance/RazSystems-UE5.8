@@ -35,6 +35,7 @@ namespace PDANaming
 	static const TCHAR* NamePattern    = TEXT("^[A-Za-z0-9]+$");
 	static const TCHAR* IntPattern     = TEXT("^[0-9]+$");
 	static const TCHAR* Capacity3      = TEXT("^[0-9]{3}$");
+	static const TCHAR* BoolPattern    = TEXT("^[01]$");
 
 	/**
 	 * The rules table. To support a new PDA type, add another FRule here.
@@ -70,6 +71,32 @@ namespace PDANaming
 					{ IntPattern,     TEXT("a whole-number damage value, e.g. 46") },
 					{ IntPattern,     TEXT("a whole-number penetration value, e.g. 28") },
 					{ NamePattern,    TEXT("an alphanumeric name, e.g. M855 or 6LG1") },
+				}
+			},
+			{
+				TEXT("SemiAuto"), TEXT("Semi Automatic"),
+				TEXT("PDA_SemiAuto_<MaxFireRate>"),
+				TEXT("PDA_SemiAuto_600"),
+				{
+					{ IntPattern, TEXT("a whole-number max fire rate cap in RPM, e.g. 600") },
+				}
+			},
+			{
+				TEXT("Burst"), TEXT("Burst Fire"),
+				TEXT("PDA_Burst_<BurstCount>_<Continuous>_<Rate>"),
+				TEXT("PDA_Burst_3_0_900"),
+				{
+					{ IntPattern,  TEXT("a whole-number burst shot count, e.g. 3") },
+					{ BoolPattern, TEXT("0 (single burst per trigger press) or 1 (continuous burst while held)") },
+					{ IntPattern,  TEXT("a whole-number fire rate in RPM, e.g. 900") },
+				}
+			},
+			{
+				TEXT("FullAuto"), TEXT("Fully Automatic"),
+				TEXT("PDA_FullAuto_<Rate>"),
+				TEXT("PDA_FullAuto_800"),
+				{
+					{ IntPattern, TEXT("a whole-number fire rate in RPM, e.g. 800") },
 				}
 			},
 			{
