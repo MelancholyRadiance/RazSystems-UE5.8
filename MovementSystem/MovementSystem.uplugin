@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "MovementSystem",
+	"Description": "Data-driven movement system. Configure jump, sprint, crouch, prone, aim and inertia through data assets with no C++.",
+	"Category": "Raz",
+	"CreatedBy": "Raz",
+	"CreatedByURL": "https://github.com/MelancholyRadiance/RazSystems-UE5.8",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "MovementSystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "MovementSystemEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

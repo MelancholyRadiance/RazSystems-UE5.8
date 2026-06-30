@@ -25,6 +25,18 @@ Collection of data-driven plugins for building weapons, magazines and ammo in Un
 
 Add a `FireModeManagerComponent` to your weapon actor, populate its `FireModes` array with your assets, and bind `OnFireShot` to your shot logic. Call `StartFire()` / `StopFire()` from input and `CycleFireMode()` to switch modes.
 
+**MovementSystem** - Standalone, no dependencies on the weapon plugins.
+
+- Add `RazMovementDataComponent` to any Character. Populate whichever slots you need and call the functions from input or your character class.
+- **Jump** - sets Z velocity and max jump count on the CMC.
+- **Sprint** - speed multiplier with optional ramp-up curve (X = seconds sprinting, Y = multiplier).
+- **Crouch** - uses UE's native Crouch/UnCrouch so the capsule resize is replicated automatically. Multiplier with optional curve.
+- **Prone** - manual capsule resize driven by a replicated bool. Fine for most games, less authoritative than native crouch in competitive multiplayer. Multiplier with optional curve.
+- **Aim** - flat speed multiplier applied while aiming down sights.
+- **Inertia** - a single asset that sets max acceleration, braking, ground friction, air control and braking while falling. Think of it as the weight profile of your character.
+
+Sprint, Crouch, Prone and Aim all stack multiplicatively - they are not mutually exclusive. A character can sprint + aim at the same time and get both multipliers applied.
+
 **WeaponSystemAttachments** - Extends WeaponSystemBase. Attachment support, still in progress.
 
 **RazPluginNamingConvention** - Adds basic linting to names to stop malformed naming conventions.
@@ -42,6 +54,7 @@ YourProject/
     MagazineSystem/
     WeaponSystemBase/
     FireModeSystem/              (optional)
+    MovementSystem/              (optional)
     WeaponSystemAttachments/     (optional)
     RazPluginNamingConvention/   (optional)
 ```
@@ -62,9 +75,16 @@ RazSystems
 ├── WeaponSystem
 │     └── Weapon
 └── FireModeSystem
-      ├── Semi Automatic
-      ├── Burst Fire
-      └── Fully Automatic
+│     ├── Semi Automatic
+│     ├── Burst Fire
+│     └── Fully Automatic
+└── MovementSystem
+      ├── Jump Data
+      ├── Sprint Data
+      ├── Crouch Data
+      ├── Prone Data
+      ├── Aim Data
+      └── Movement Inertia Data
 ```
 
 ## Naming Convention
@@ -80,6 +100,12 @@ All assets follow `PDA_<Type>_<...fields...>`. The optional naming convention pl
 | Semi Auto | `PDA_SemiAuto_<MaxRate>` | `PDA_SemiAuto_600` |
 | Burst | `PDA_Burst_<Count>_<Continuous>_<Rate>` | `PDA_Burst_3_0_900` |
 | Full Auto | `PDA_FullAuto_<Rate>` | `PDA_FullAuto_800` |
+| Jump | `PDA_Jump_<ZVelocity>_<MaxJumpCount>` | `PDA_Jump_600_1` |
+| Sprint | `PDA_Sprint_<SpeedMultiplierPercent>` | `PDA_Sprint_150` |
+| Crouch | `PDA_Crouch_<SpeedMultiplierPercent>` | `PDA_Crouch_50` |
+| Prone | `PDA_Prone_<SpeedMultiplierPercent>` | `PDA_Prone_15` |
+| Aim | `PDA_Aim_<SpeedMultiplierPercent>` | `PDA_Aim_70` |
+| Inertia | `PDA_Inertia_<Name>` | `PDA_Inertia_Standard` |
 
 Calibre uses the format `NxN` (digits, x, digits). Magazine capacity is zero-padded to 3 digits. Names are alphanumeric and can start with a number (e.g. `6LG1`). Burst continuous is `0` (single burst per press) or `1` (hold to keep bursting).
 
@@ -100,7 +126,7 @@ A 7.62x54R magazine and a 7.62x51 NATO weapon will never match even though the n
 
 **On the weapon actor** - `FireModeManagerComponent`, reference to its `PDAWeaponData`, shot logic bound to `OnFireShot`, current magazine state.
 
-**On the character** - reference to the equipped weapon, input events that call through to the weapon (`StartFire`, `StopFire`, `CycleFireMode`), magazine inventory and reload logic.
+**On the character** - reference to the equipped weapon, input events that call through to the weapon (`StartFire`, `StopFire`, `CycleFireMode`), magazine inventory and reload logic, `RazMovementDataComponent` for movement state.
 
 ## Dependencies
 
@@ -108,6 +134,8 @@ A 7.62x54R magazine and a 7.62x51 NATO weapon will never match even though the n
 AmmoSystem
 └── MagazineSystem
       └── WeaponSystemBase
-            ├── FireModeSystem   (optional)
-            └── WeaponSystemAttachments
+            ├── FireModeSystem          (optional)
+            └── WeaponSystemAttachments (optional)
+
+MovementSystem  (standalone, no weapon system dependencies)
 ```

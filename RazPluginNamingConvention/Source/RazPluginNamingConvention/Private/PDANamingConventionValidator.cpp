@@ -109,6 +109,55 @@ namespace PDANaming
 					{ NamePattern,    TEXT("an alphanumeric name, e.g. M4A1") },
 				}
 			},
+			{
+				TEXT("Jump"), TEXT("Jump"),
+				TEXT("PDA_Jump_<ZVelocity>_<MaxJumpCount>"),
+				TEXT("PDA_Jump_600_1"),
+				{
+					{ IntPattern, TEXT("a whole-number jump Z velocity, e.g. 600") },
+					{ IntPattern, TEXT("a whole-number max jump count, e.g. 1 or 2") },
+				}
+			},
+			{
+				TEXT("Sprint"), TEXT("Sprint"),
+				TEXT("PDA_Sprint_<SpeedMultiplierPercent>"),
+				TEXT("PDA_Sprint_150"),
+				{
+					{ IntPattern, TEXT("a whole-number speed multiplier as a percentage, e.g. 150 for 1.5x") },
+				}
+			},
+			{
+				TEXT("Crouch"), TEXT("Crouch"),
+				TEXT("PDA_Crouch_<SpeedMultiplierPercent>"),
+				TEXT("PDA_Crouch_50"),
+				{
+					{ IntPattern, TEXT("a whole-number speed multiplier as a percentage, e.g. 50 for 0.5x") },
+				}
+			},
+			{
+				TEXT("Prone"), TEXT("Prone"),
+				TEXT("PDA_Prone_<SpeedMultiplierPercent>"),
+				TEXT("PDA_Prone_15"),
+				{
+					{ IntPattern, TEXT("a whole-number speed multiplier as a percentage, e.g. 15 for 0.15x") },
+				}
+			},
+			{
+				TEXT("Aim"), TEXT("Aim"),
+				TEXT("PDA_Aim_<SpeedMultiplierPercent>"),
+				TEXT("PDA_Aim_70"),
+				{
+					{ IntPattern, TEXT("a whole-number speed multiplier as a percentage, e.g. 70 for 0.7x") },
+				}
+			},
+			{
+				TEXT("Inertia"), TEXT("Movement Inertia"),
+				TEXT("PDA_Inertia_<Name>"),
+				TEXT("PDA_Inertia_Standard"),
+				{
+					{ NamePattern, TEXT("an alphanumeric preset name, e.g. Standard or HeavyArmour") },
+				}
+			},
 		};
 		return Rules;
 	}
