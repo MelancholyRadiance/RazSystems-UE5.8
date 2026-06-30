@@ -1,0 +1,17 @@
+using UnrealBuildTool;
+
+public class RazInputActions : ModuleRules
+{
+	public RazInputActions(ReadOnlyTargetRules Target) : base(Target)
+	{
+		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core",
+			"CoreUObject",
+			"Engine",
+			"EnhancedInput",
+		});
+	}
+}

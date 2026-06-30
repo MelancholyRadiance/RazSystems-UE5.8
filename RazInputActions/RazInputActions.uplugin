@@ -2,8 +2,8 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "AmmoManagement",
-	"Description": "Runtime magazine instances with inventory, ammo consumption, magazine-check accuracy, and a UMG widget base.",
+	"FriendlyName": "RazInputActions",
+	"Description": "Organized input action data assets for weapon and movement inputs, creatable under RazSystems in the Content Browser.",
 	"Category": "Raz",
 	"CreatedBy": "Raz",
 	"CreatedByURL": "https://github.com/MelancholyRadiance/RazSystems-UE5.8",
@@ -16,22 +16,19 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "AmmoManagement",
+			"Name": "RazInputActions",
 			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RazInputActionsEditor",
+			"Type": "Editor",
 			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
 		{
-			"Name": "MagazineSystem",
-			"Enabled": true
-		},
-		{
-			"Name": "AmmoSystem",
-			"Enabled": true
-		},
-		{
-			"Name": "WeaponSystemBase",
+			"Name": "EnhancedInput",
 			"Enabled": true
 		}
 	]
