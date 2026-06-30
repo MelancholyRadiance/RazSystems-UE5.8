@@ -1,0 +1,31 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "AmmoManagement",
+	"Description": "Addition to MagazineSystem to allow render of ammo state and mag capacity",
+	"Category": "Raz",
+	"CreatedBy": "Raz",
+	"CreatedByURL": "https://github.com/MelancholyRadiance/RazSystems-UE5.8",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Plugins": [
+		{
+			"Name": "MagazineSystem",
+			"Enabled": true
+		},
+		{
+			"Name": "AmmoSystem",
+			"Enabled": true
+		},
+		{
+			"Name": "WeaponSystemBase",
+			"Enabled": true
+		}
+	]
+}
