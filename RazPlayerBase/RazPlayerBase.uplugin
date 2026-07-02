@@ -2,8 +2,8 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "RazInputActions",
-	"Description": "Single combined Input Mapping Context with pre-created player actions (move, look, weapon, movement states) under RazSystems in the Content Browser.",
+	"FriendlyName": "RazPlayerBase",
+	"Description": "Abstract base character with RazSystems components and Enhanced Input pre-wired. Subclass in Blueprint or C++ to get started.",
 	"Category": "Raz",
 	"CreatedBy": "Raz",
 	"CreatedByURL": "https://github.com/MelancholyRadiance/RazSystems-UE5.8",
@@ -16,19 +16,26 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "RazInputActions",
+			"Name": "RazPlayerBase",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "RazInputActionsEditor",
-			"Type": "Editor",
 			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
 		{
 			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "MovementSystem",
+			"Enabled": true
+		},
+		{
+			"Name": "AmmoManagement",
+			"Enabled": true
+		},
+		{
+			"Name": "RazInputActions",
 			"Enabled": true
 		}
 	]

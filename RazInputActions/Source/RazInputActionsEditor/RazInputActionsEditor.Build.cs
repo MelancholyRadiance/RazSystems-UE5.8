@@ -16,6 +16,7 @@ public class RazInputActionsEditor : ModuleRules
 		{
 			"CoreUObject",
 			"Engine",
+			"InputCore",
 			"UnrealEd",
 			"AssetTools",
 			"AssetRegistry",
